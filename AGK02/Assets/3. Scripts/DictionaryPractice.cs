@@ -16,7 +16,7 @@ public class DictionaryPractice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lb.Add("화살", 1);
+        lb.Add("화살", 1); // 넣기
         lb.Add("돌맹이", 3);
         lb.Add("물약", 5);
 
@@ -27,7 +27,7 @@ public class DictionaryPractice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (get)
+        if (get) // 아이템 획득하는 코드
         {
             lb[what]++;
 
@@ -37,7 +37,7 @@ public class DictionaryPractice : MonoBehaviour
             get = false;
         }
 
-        if (use)
+        if (use) // 아이템 사용하는 코드
         {
             bool isit = false;
             bool isNoZero = true;
@@ -75,11 +75,11 @@ public class DictionaryPractice : MonoBehaviour
         }
     }
 
-    void ItemConsole()
+    void ItemConsole() // 가장 많이 가지고 있는 템이랑 총 개수 표시해주는 함수
     {
         int many = 0;
 
-        foreach (KeyValuePair<string, int> book in lb) // foreach는 for과는 달리 무조건 대상 리스트의 처음부터 끝까지 반복.
+        foreach (KeyValuePair<string, int> book in lb)
         {
             if (book.Value > many)
             {
@@ -93,7 +93,7 @@ public class DictionaryPractice : MonoBehaviour
         Debug.Log($"총 아이템 개수:{allItem}");
     }
 
-    void ShowAllIB()
+    void ShowAllIB() // 모든 템 표시해주는 함수
     {
         foreach (KeyValuePair<string, int> book in lb) 
         {
